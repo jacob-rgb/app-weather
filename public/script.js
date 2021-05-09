@@ -23,9 +23,14 @@ const displayData = (obj) => {
   min.textContent = Math.floor(obj.list[0].main.temp_min);
   max.textContent = Math.floor(obj.list[0].main.temp_max);
   temperatureDescription.textContent = obj.list[0].weather[0].description.charAt(0).toUpperCase()+ obj.list[0].weather[0].description.slice(1);
+
+  
 }
 
 const displayBackgroundImage = (obj) => {
+  
+  const tiempo = obj.list[0].weather[0].main;
+  console.log(tiempo);
   console.log(obj)
   // extraer hora del obj que contiene los datos del tiempo
   let datespanish = new Date(obj.list[4].dt*1000).toLocaleString("es-ES", {
@@ -41,11 +46,55 @@ const displayBackgroundImage = (obj) => {
   console.log(dayHour)
   // lógica
   if(dayHour > 6 && dayHour < 20) {
-    container.classList.remove("night");
-    container.classList.add("day");
+
+    // De Dia
+
+    if(tiempo === 'Clouds') {
+
+      container.classList.remove("night", "day", "cloudy-night", "snow-night", "snow-day", "rain-day", "rain-night", 'clear-night');
+      container.classList.add("cloudy-day");
+
+    } else if(tiempo === 'Snow') {
+
+      container.classList.remove("night day", "cloudy-day", "cloudy-night", "snow-night", "rain-day", "rain-night", 'clear-night');
+      container.classList.add('snow-day')
+    } 
+      else if(tiempo === 'Rain') {
+
+      container.classList.remove("night", "day","cloudy-day", "cloudy-night", "snow-night", "snow-day", "rain-night", 'clear-night');
+      container.classList.add('rain-day')
+    }
+
+     else {
+
+      container.classList.remove("night","cloudy-day", "cloudy-night", "snow-night", "snow-day", "rain-night", "rain-day", 'clear-night');
+      container.classList.add('day')
+    }
   } else {
-    container.classList.remove("day");
-    container.classList.add("night");
+
+    // De Noche
+
+    if(tiempo === 'Clouds') {
+
+      container.classList.remove("night", "day", "cloudy-day", "cloudy-night", "snow-night", "rain-day", "rain-night", 'clear-night');
+      container.classList.add("cloudy-night");
+
+    } else if(tiempo === 'Snow') {
+
+      container.classList.remove("night", "day", "cloudy-day", "cloudy-night", "snow-day", "rain-day", "rain-night", 'clear-night');
+      container.classList.add('snow-night')
+    }
+
+     else if(tiempo === 'Rain') {
+
+      container.classList.remove("night", "day", "cloudy-day", "cloudy-night", "snow-night", "snow-day" ,"rain-day", 'clear-night');
+      container.classList.add('rain-night')
+    }
+
+    else {
+      container.classList.remove("night","cloudy-day", "cloudy-night", "snow-night", "snow-day", "rain-night", "day");
+      container.classList.add('clear-night')
+    }
   }
 }
 

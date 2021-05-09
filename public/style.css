@@ -33,6 +33,71 @@ body {
     background-repeat:no-repeat ;
     background-position:center ;
 }
+.container.cloudy-day {
+    background-image: url("./images/dia-nublado.jpg");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-position:center ;
+}
+
+.container.cloudy-night {
+    background-image: url("./images/noche-nublada.jpg");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-position:center ;
+}
+
+.container.cloudy-night * {
+    color: white;
+}
+
+.container.snow-day {
+    background-image: url("./images/dia-nevado.jpg");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-position:center ;
+}
+
+.container.snow-night {
+    background-image: url("./images/noche-nevada.jpg");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-position:center ;
+}
+
+.container.snow-night * {
+    color: white;
+}
+
+.container.rain-day {
+    background-image: url("./images/dia-lluvioso.jpg");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-position:center ;
+}
+
+.container.rain-night {
+    background-image: url("./images/rainy.jpg");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-position:center ;
+}
+
+.container.rain-night * {
+    color: white;
+}
+
+.container.clear-night {
+    background-image: url("./images/noche-clara.jpg");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-position:center ;
+}
+
+.container.clear-night * {
+    color: white;
+}
+
 .inputTemp {
     margin: 1rem auto;
     width: 80%;
@@ -53,6 +118,7 @@ body {
     padding: 0.5rem;
     border-radius: .5rem;
     border: none;
+    color: black !important;
 }
 .search:focus{
     outline: none;
