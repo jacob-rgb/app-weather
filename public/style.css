@@ -76,6 +76,10 @@ body {
     background-position:center ;
 }
 
+.container.rain-day * {
+    color: white;
+}
+
 .container.rain-night {
     background-image: url("./images/rainy.jpg");
     background-size: cover;
@@ -174,9 +178,9 @@ body {
 }
 .weather_min >span {
     font-size: 1.4rem;
-    color: blue;
+    color: blue !important;
 }
 .weather_max >span {
     font-size: 1.4rem;
-    color: tomato;
+    color: tomato !important;
 }
