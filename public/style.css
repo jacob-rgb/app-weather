@@ -184,3 +184,9 @@ body {
     font-size: 1.4rem;
     color: tomato !important;
 }
+
+@media screen and (max-width: 900px) {
+    .container {
+        width: 100%;
+    }
+}
